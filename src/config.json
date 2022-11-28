@@ -1,0 +1,21 @@
+{
+    "targetVersion": "0.0.1",
+    "debug": true,
+    "color": "green",
+    "logo": "http://www.redmine.org/attachments/3462/redmine_fluid_icon.png",
+    "menuIcons": {
+        "projects": "briefcase",
+        "overview": "dashboard",
+        "activity": "activity",
+        "issues": "note",
+        "time-entries": "clock",
+        "agile": "layout-kanban",
+        "gantt": "timeline",
+        "calendar": "calendar",
+        "news": "speakerphone",
+        "documents": "archive",
+        "wiki": "book-2",
+        "files": "files",
+        "settings": "tool"
+    }
+}

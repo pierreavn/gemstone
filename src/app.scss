@@ -1,0 +1,33 @@
+@import "./vendors/tabler/tabler.min.scss";
+@import "./modules";
+
+body {
+    display: none;
+}
+
+body.loaded {
+    display: block;
+}
+
+.navbar .icon {
+    opacity: .8;
+}
+
+form label {
+    margin-bottom: .5rem;
+}
+
+form .form-control,
+form .form-select {
+    margin-bottom: 1rem;
+}
+
+form .form-control + .form-hint,
+form .form-select + .form-hint {
+    margin-top: -.8rem !important;
+    margin-bottom: 1rem !important;
+}
+
+span.required {
+    color: #d63939;
+}

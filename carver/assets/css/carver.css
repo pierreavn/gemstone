@@ -1,0 +1,11 @@
+#alert-error {
+    display: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+.input-group-text {
+    background-color: #fff !important;
+}

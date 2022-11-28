@@ -1,0 +1,148 @@
+<style>
+    .navbar-expand-md .navbar-light .nav-item.active:after,
+    .navbar-expand-md.navbar-light .nav-item.active:after,
+    .nav-bordered .nav-item.show .nav-link,
+    .nav-bordered .nav-link.active {
+        border-color: var(--tblr-{{config.color}}) !important;
+    }
+
+    .form-control:focus {
+        border-color: var(--tblr-{{config.color}}) !important;
+        box-shadow: none !important;
+    }
+</style>
+<div class="page">
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-md navbar-light d-print-none">
+        <div class="container-xl">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
+                aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex align-items-center">
+                <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+                    <a href="/">
+                        <img src="{{{ config.logo }}}" alt="logo" class="navbar-brand-image">
+                    </a>
+                </h1>
+                {{#if currentProject}}
+                <h3 class="my-0 mx-2">{{ currentProject }}</h3>
+                {{/if}}
+            </div>
+
+            {{#if userName}}
+            <div class="navbar-nav flex-row order-md-last">
+                <div class="nav-item d-none d-md-flex me-3">
+                    <div class="btn-list">
+                        <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
+                            <form action="/search" method="get" autocomplete="off" accept-charset="UTF-8">
+                                <input name="utf8" type="hidden" value="✓" autocomplete="off">
+                                <input type="hidden" name="scope" autocomplete="off">
+                                <div class="input-icon">
+                                    <span class="input-icon-addon">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <circle cx="10" cy="10" r="7" />
+                                            <line x1="21" y1="21" x2="15" y2="15" />
+                                        </svg>
+                                    </span>
+                                    <input
+                                        type="text"
+                                        name="q"
+                                        accesskey="f"
+                                        value=""
+                                        class="form-control"
+                                        placeholder="{{ t.header.search }}"
+                                        aria-label="{{ t.header.search }}">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
+                        aria-label="Open user menu">
+                        <div class="d-none d-sm-block ps-2">
+                            <div>{{ userName }}</div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <a href="/my/account" class="dropdown-item">
+                            {{ t.header.myAccount }}
+                        </a>
+                        {{#if t.header.administration}}
+                        <a href="/admin/projects" class="dropdown-item">
+                            {{ t.header.administration }}
+                        </a>
+                        {{/if}}
+                        <a href="{{{ helpUrl }}}" target="_blank" rel="noopener" class="dropdown-item">
+                            {{ t.header.help }}
+                        </a>
+                        <a href="/logout" class="dropdown-item">
+                            {{ t.header.logout }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <ul class="navbar-nav">
+                {{#each topmenu as |item|}}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{{ item.url }}}">
+                        <span class="nav-link-title">
+                            {{ item.name }}
+                        </span>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </div>
+    </header>
+
+    {{#if menu}}
+    <div class="navbar-expand-md">
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <div class="navbar navbar-light">
+                <div class="container-xl">
+                    <ul class="navbar-nav">
+                        {{#each menu as |item|}}
+                        <li class="nav-item {{#if item.selected}}active{{/if}}">
+                            <a class="nav-link" href="{{{ item.url }}}">
+                                {{#if item.icon}}
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <img
+                                        src="{{ ../themeUrl }}/src/vendors/tabler-icons/{{ item.icon }}.svg"
+                                        class="icon">
+                                </span>
+                                {{/if}}
+                                <span class="nav-link-title">
+                                    {{ item.name }}
+                                </span>
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="page-wrapper">
+        {{{ payload }}}
+
+        <footer class="footer footer-transparent d-print-none">
+            <div class="container-xl">
+                <div class="row text-center align-items-center">
+                    <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                        {{{ parts.copyright }}}
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

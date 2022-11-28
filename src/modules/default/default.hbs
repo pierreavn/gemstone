@@ -1,0 +1,34 @@
+<!-- Page header -->
+{{#if pageName}}
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    {{pageName}}
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+
+<!-- Page body -->
+<div class="page-body">
+    <div class="container-xl">
+        {{#if submenu}}
+        <ul class="nav nav-bordered mb-4">
+            {{#each submenu as |item|}}
+            <li class="nav-item">
+                <a class="nav-link {{#if item.selected}}active text-{{../config.color}}{{/if}}" href="{{{item.url}}}"
+                    onclick="{{{item.onclick}}}">
+                    {{item.name}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+
+        {{{ payload }}}
+    </div>
+</div>

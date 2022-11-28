@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemstone Theme Carver</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/tabler.min.css" />
+    <link rel="stylesheet" href="assets/css/carver.css" />
+
+    <!-- Scripts -->
+    <script src="https://stackblitz.com/webcontainer-api-client.js" defer></script>
+    <script src="assets/js/tabler.min.js" defer></script>
+    <script src="assets/js/carver-variables.js" defer></script>
+    <script src="assets/js/carver-webcontainers.js" defer></script>
+    <script src="assets/js/carver-form.js" defer></script>
+    <script src="assets/js/carver-main.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <div class="page-body">
+      <div class="container-md">
+        <h1 class="mb-4">Gemstone Theme Carver</h1>
+
+        <div id="alert-error" class="alert alert-danger mb-4" role="alert">
+          An error occured, please try again later.
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Version</label>
+          <select id="select-version" class="form-select" disabled>
+            <option value="">Loading...</option>
+          </select>
+        </div>
+    
+        <div class="mb-3">
+            <label class="form-label">Primary Color</label>
+            <div class="row g-2">
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="blue" class="form-colorinput-input" checked>
+                  <span class="form-colorinput-color bg-blue"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="azure" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-azure"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="indigo" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-indigo"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="purple" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-purple"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="pink" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-pink"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="red" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-red"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="orange" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-orange"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="yellow" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-yellow"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="lime" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-lime"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="green" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-green"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="teal" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-teal"></span>
+                </label>
+              </div>
+              <div class="col-auto">
+                <label class="form-colorinput">
+                  <input name="color" type="radio" value="cyan" class="form-colorinput-input">
+                  <span class="form-colorinput-color bg-cyan"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+        <div class="mb-3">
+          <label class="form-label">Logo</label>
+          <div class="input-group input-group-flat">
+            <input
+              id="input-logo"
+              type="url"
+              class="form-control"
+              value="http://www.redmine.org/attachments/3462/redmine_fluid_icon.png"
+              placeholder="https://domain.com/logo.png">
+            <span class="input-group-text">
+              <a onclick="previewLogo()" class="input-group-link">Preview logo</a>
+            </span>
+          </div>
+        </div>
+    
+        <button id="btn-submit" class="btn btn-primary mt-3" onclick="submit(this)" disabled>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chisel" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M14 14l1.5 1.5"></path>
+            <path d="M18.347 15.575l2.08 2.079a1.96 1.96 0 0 1 -2.773 2.772l-2.08 -2.079a1.96 1.96 0 0 1 2.773 -2.772z"></path>
+            <path d="M3 6l3 -3l7.414 7.414a2 2 0 0 1 .586 1.414v2.172h-2.172a2 2 0 0 1 -1.414 -.586l-7.414 -7.414z"></path>
+          </svg>
+          Build Theme
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

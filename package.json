@@ -1,0 +1,21 @@
+{
+  "name": "gemstone-redmine-theme",
+  "version": "0.0.1",
+  "scripts": {
+    "watch": "webpack watch",
+    "build": "rm -rf dist && webpack && node ./scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pierreavn",
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "handlebars": "^4.7.7",
+    "handlebars-loader": "^1.7.2",
+    "node-sass": "^8.0.0",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "yazl": "^2.5.1"
+  }
+}

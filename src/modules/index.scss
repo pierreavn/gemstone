@@ -1,0 +1,11 @@
+.module--auth {
+    @import "./auth/auth.scss";
+}
+
+.module--default {
+    @import "./default/default.scss";
+}
+
+.module--new-latest {
+    @import "./news-latest/news-latest.scss";
+}

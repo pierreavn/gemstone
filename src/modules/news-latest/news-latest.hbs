@@ -1,0 +1,14 @@
+<div class="card card-borderless mb-3">
+    <div class="card-body">
+        <h3 class="card-title m-0 text-{{ config.color }}">
+            <a href="{{{ data.project.url }}}">{{ data.project.name }}</a>&nbsp;&bullet;&nbsp;<a href="{{{ data.url }}}">{{ data.title }}</a>
+        </h3>
+
+        {{#if data.summary}}
+        <div class="mt-2">{{{ data.summary }}}</div>
+        {{/if}}
+    </div>
+    <div class="card-footer">
+        {{{ data.author }}}
+    </div>
+</div>

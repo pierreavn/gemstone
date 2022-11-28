@@ -1,0 +1,7 @@
+var s=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var y=Object.prototype.hasOwnProperty;var l=(e,r)=>s(e,"name",{value:r,configurable:!0});var b=(e,r)=>{for(var n in r)s(e,n,{get:r[n],enumerable:!0})},v=(e,r,n,o)=>{if(r&&typeof r=="object"||typeof r=="function")for(let t of f(r))!y.call(e,t)&&t!==n&&s(e,t,{get:()=>r[t],enumerable:!(o=m(r,t))||o.enumerable});return e};var P=e=>v(s({},"__esModule",{value:!0}),e);var p=(e,r,n)=>new Promise((o,t)=>{var u=i=>{try{d(n.next(i))}catch(c){t(c)}},g=i=>{try{d(n.throw(i))}catch(c){t(c)}},d=i=>i.done?o(i.value):Promise.resolve(i.value).then(u,g);d((n=n.apply(e,r)).next())});var C={};b(C,{load:()=>E});module.exports=P(C);var a=null;function E(){return p(this,null,function*(){return a!=null||(a=x()),yield a,window.WebContainer})}l(E,"load");function x(){var n;let e=document.createElement("script");e.src=(n=window.WEBCONTAINER_API_CLIENT_URL)!=null?n:"https://stackblitz.com/webcontainer-api-client.js",e.type="application/javascript";let r=new Promise((o,t)=>{e.onload=()=>o(),e.onerror=()=>t(new Error("Unable to load WebContainer API"))});return document.body.insertBefore(e,null),r}l(x,"doLoad");0&&(module.exports={load});
+/**
+ * @webcontainer/api 0.0.8
+ * @license Copyright 2022 Stackblitz, Inc. All Rights Reserved.
+ * Portions of this software are patent pending in USA and EU jurisdictions.
+ * More info available at https://stackblitz.com/terms-of-service.
+ */
